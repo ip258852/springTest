@@ -4,10 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <display-name>winner-test Web Application</display-name>
+
     <servlet>
         <servlet-name>mvc-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!--指定了核心配置文件的位置 mvc-dispatcher.xml存放在resources目录下-->
+        <!--指定這個mvc專案上下文的設定-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:mvc-dispatcher.xml</param-value>
