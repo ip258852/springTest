@@ -11,8 +11,13 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:properties/redis.properties" ignore-unresolvable="true" />
+    <context:annotation-config/>
+
+    <import resource="comfig/redis-config.xml"></import>
+
     <!-- 掃秒Controller在哪,絕對難不倒你 -->
-    <context:component-scan base-package="org.test"/>
+    <context:component-scan base-package="org.test.controtller"/>
 
     <!-- Body-parser,nice body -->
     <mvc:annotation-driven>
@@ -27,5 +32,6 @@
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
 
 </beans>
