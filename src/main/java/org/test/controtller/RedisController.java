@@ -16,7 +16,7 @@ public class RedisController {
         user user = new user();
         user.setId("A1005106");
         session.setAttribute("uid",user);
-        System.out.println(session.getAttribute("uid").toString());
+        System.out.println();session.getAttribute("uid").toString();
         return "ok";
     }
 
