@@ -23,7 +23,7 @@ public class RestController {
         return new Student(123456);
     }
 
-    @RequestMapping(value = "/222",method = RequestMethod.POST)
+    @RequestMapping(value = "/2252",method = RequestMethod.POST)
     @ResponseBody
     public Student testRequest(@RequestHeader(value = "Content-Type") String req){
         System.out.println(req);
