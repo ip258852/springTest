@@ -15,6 +15,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
         <!--json-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -69,7 +74,25 @@
             <artifactId>log4j</artifactId>
             <version>2.10.0</version>
         </dependency>
-    </dependencies>
 
+
+        <!--Websocket-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+        <!-- WEBSOCKET的JAR -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+            <version>${spring-version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
