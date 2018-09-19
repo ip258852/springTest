@@ -1,6 +1,7 @@
 package org.test.controtller;
 
 import org.springframework.context.event.EventListener;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.annotation.SendToUser;
@@ -20,6 +21,18 @@ public class WebsocketController {
     @SendTo("/topic/greetings")
     public String greeting(String message) throws Exception {
         return message;
+    }
+
+    @MessageMapping("/json")
+    @SendTo("/topic/resJson")
+    public  Greeting gre(){
+        return  new Greeting("ABCD");
+    }
+
+    @MessageMapping("/pathMatcher")
+    @SendTo("/topic/mathcher")
+    public String gre(@DestinationVariable String msg){
+        return  msg;
     }
 
     // 這邊撰寫事件,輸入參數只能唯一

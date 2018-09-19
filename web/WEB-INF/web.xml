@@ -31,5 +31,4 @@
             <name>hello</name>
         </cookie-config>
     </session-config>
-
 </web-app>
