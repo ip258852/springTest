@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+// not use
 public class TestListener implements ServletContextListener {
     private Log log = LogFactory.getLog(TestListener.class);
     private ContextLoader contextLoader;
