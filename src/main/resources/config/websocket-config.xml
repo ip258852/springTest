@@ -9,20 +9,22 @@
 
     <!-- url:/app為-->
     <websocket:message-broker application-destination-prefix="/app" user-destination-prefix="/user">
-        <websocket:stomp-endpoint path="/endpoint" allowed-origins="*">
+        <websocket:stomp-endpoint path="/endpoint" allowed-origins="*" >
             <websocket:handshake-handler ref="testHandler" />
             <websocket:handshake-interceptors >
                 <bean class="org.test.interceptor.TestInterceptor"/>
             </websocket:handshake-interceptors>
+
             <websocket:sockjs/>
         </websocket:stomp-endpoint>
-        <websocket:simple-broker prefix="/topic"/>
+        <websocket:simple-broker  prefix="/topic"/>
     </websocket:message-broker>
+    
+    <websocket:handlers>
+        <websocket:mapping path="/hi" handler="txt"/>
+    </websocket:handlers>
 
-    <bean id="pathMatcher" class="org.springframework.util.AntPathMatcher">
-        <constructor-arg index="0" value="." />
-    </bean>
     <bean id="testHandler" class="org.test.handler.TestHandler">
-
     </bean>
+    <bean id="txt" class="org.test.handler.TxtHandler"/>
 </beans>

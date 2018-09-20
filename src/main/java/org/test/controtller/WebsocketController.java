@@ -5,17 +5,15 @@ import org.springframework.context.event.EventListener;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessageSendingOperations;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.annotation.SendToUser;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.socket.messaging.SessionConnectEvent;
+
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.util.HashMap;
+import java.security.Principal;
 import java.util.Map;
 
 /**
@@ -23,6 +21,9 @@ import java.util.Map;
  */
 @Controller
 public class WebsocketController {
+
+    @Autowired
+    SimpMessagingTemplate template;
 
     //Controller的分支 For 前端的sendTo /app/hello,/app需要與mvc-dispattcher內設定相同
     //傳給前端有訂閱這個URL的人,topic要與 <websocket:simple-broker prefix="/topic"/>相同
@@ -41,14 +42,25 @@ public class WebsocketController {
 
     @MessageMapping("/json")
     @SendTo("/topic/json")
-    public  Greeting json(){
+    public  Greeting sjson(){
         return  new Greeting("ABCD");
     }
 
+    @MessageMapping("/jsonH")
+    @SendTo("/topic/json")
+    public  String rjson(User user){
+        return  user.toString();
+    }
+
     @MessageMapping("/oto")
-    @SendToUser("/topic/oto")
+    @SendToUser(value = "/topic/oto")
     public String oto(){
         return "bitch";
+    }
+
+    @MessageMapping("/trans")
+    public void trans(){
+        this.template.convertAndSend("/topic/json","/trans 傳送給 /topic/json 驗孕棒");
     }
 
     // 這邊撰寫事件,輸入參數只能唯一
@@ -67,5 +79,35 @@ class Greeting {
 
     public String getContent() {
         return content;
+    }
+}
+
+class User{
+    private  int age ;
+    private  String id;
+
+    public User(){
+
+    }
+
+    @Override
+    public String toString() {
+        return "You'r "+this.id+" age is "+this.age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
