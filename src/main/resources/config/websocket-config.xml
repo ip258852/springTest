@@ -7,6 +7,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		">
 
+    <!--廢棄,改java config-->
     <!-- url:/app為-->
     <websocket:message-broker application-destination-prefix="/app" user-destination-prefix="/user">
         <websocket:stomp-endpoint path="/endpoint" allowed-origins="*" >

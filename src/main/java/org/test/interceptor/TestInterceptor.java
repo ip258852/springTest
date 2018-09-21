@@ -13,9 +13,8 @@ public class TestInterceptor implements HandshakeInterceptor {
     public boolean beforeHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Map<String, Object> map) throws Exception {
         ServletServerHttpRequest servletServerHttpRequest = (ServletServerHttpRequest)serverHttpRequest;
         HttpSession session = servletServerHttpRequest.getServletRequest().getSession();
-
-        System.out.println(session.getId());
         map.put("session",session.getId());
+        System.out.println(session.getId());
         return true;
     }
 

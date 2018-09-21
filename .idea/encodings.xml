@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://D:/dayu_work/brainking" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-data" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-iservice" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-model" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-service" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-tools" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-web" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-web/brainking-client" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-web/brainking-server" charset="UTF-8" />
+    <file url="file://D:/dayu_work/brainking/brainking-web/brainking-webcommon" charset="UTF-8" />
+  </component>
+</project>

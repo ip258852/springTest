@@ -27,5 +27,5 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-     <import resource="classpath*:config/websocket-config.xml"/>
+     <!--<import resource="classpath*:config/websocket-config.xml"/>-->
 </beans>

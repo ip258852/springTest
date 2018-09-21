@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://D:/dayu_work/brainking/brainking-web/brainking-client" />
+    <file type="web" url="file://D:/dayu_work/brainking/brainking-web/brainking-server" />
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="JavaScriptSettings">
@@ -11,7 +13,22 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="D:/dayu_work/brainking/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="D:/dayu_work/brainking/brainking-data/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-iservice/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-model/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-service/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-tools/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-web/brainking-client/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-web/brainking-server/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-web/brainking-webcommon/pom.xml" />
+        <option value="D:/dayu_work/brainking/brainking-web/pom.xml" />
+        <option value="D:/dayu_work/brainking/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_10" project-jdk-name="1.8" project-jdk-type="JavaSDK">

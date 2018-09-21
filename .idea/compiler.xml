@@ -10,5 +10,17 @@
         <module name="ttttttt" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="brainking" target="1.8" />
+      <module name="brainking-client" target="1.8" />
+      <module name="brainking-data" target="1.8" />
+      <module name="brainking-iservice" target="1.8" />
+      <module name="brainking-model" target="1.8" />
+      <module name="brainking-server" target="1.8" />
+      <module name="brainking-service" target="1.8" />
+      <module name="brainking-web" target="1.8" />
+      <module name="brainking-webcommon" target="1.8" />
+      <module name="tools" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
