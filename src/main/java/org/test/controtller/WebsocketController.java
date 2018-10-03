@@ -10,6 +10,8 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.messaging.simp.annotation.SendToUser;
 
+import org.test.beans.Greeting;
+import org.test.beans.Students;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
@@ -48,7 +50,7 @@ public class WebsocketController {
 
     @MessageMapping("/jsonH")
     @SendTo("/topic/json")
-    public  String rjson(User user){
+    public  String rjson(Students user){
         return  user.toString();
     }
 
@@ -70,44 +72,4 @@ public class WebsocketController {
     }
 }
 
-class Greeting {
-    private String content;
 
-    public Greeting(String content) {
-        this.content = content;
-    }
-
-    public String getContent() {
-        return content;
-    }
-}
-
-class User{
-    private  int age ;
-    private  String id;
-
-    public User(){
-
-    }
-
-    @Override
-    public String toString() {
-        return "You'r "+this.id+" age is "+this.age;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-}
