@@ -23,4 +23,9 @@ public class User implements Serializable {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+    @Override
+    public String toString() {
+        return "My name is "+this.name+" u can use this uid "+this.uid+" search me";
+    }
 }
